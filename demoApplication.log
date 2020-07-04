@@ -1,0 +1,11 @@
+[main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Wrong date: End date should be no later than yesterday.
+2020-07-04 13:57:54,470 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Wrong date: End date should be no later than yesterday.
+2020-07-04 14:16:07,445 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.NBPApi  - Request URL: http://api.nbp.pl/api/exchangerates/rates/C/EUR/2020-07-01/2020-07-03/?format=json
+2020-07-04 14:20:12,073 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.NBPApi  - Request URL: http://api.nbp.pl/api/exchangerates/rates/C/EUR/2020-07-01/2020-07-03/?format=json
+2020-07-04 14:32:09,162 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:32:14,502 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Please enter end date [yyyy-MM-dd]:
+2020-07-04 14:32:22,084 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Please enter start date [yyyy-MM-dd]:
+2020-07-04 14:32:27,549 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.NBPApi  - Request URL: http://api.nbp.pl/api/exchangerates/rates/C/EUR/2020-07-01/2020-07-03/?format=json
+2020-07-04 14:32:27,846 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Rate(no=126/C/NBP/2020, effectiveDate=2020-07-01, bid=4.4012, ask=4.4902)
+2020-07-04 14:32:27,869 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Rate(no=127/C/NBP/2020, effectiveDate=2020-07-02, bid=4.4228, ask=4.5122)
+2020-07-04 14:32:27,869 [main] INFO  com.sda.javagdy4.api_rekrutacyjne.Main  - Rate(no=128/C/NBP/2020, effectiveDate=2020-07-03, bid=4.4216, ask=4.511)

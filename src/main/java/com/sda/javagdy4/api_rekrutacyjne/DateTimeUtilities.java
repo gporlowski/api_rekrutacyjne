@@ -1,9 +1,12 @@
 package com.sda.javagdy4.api_rekrutacyjne;
 
+import lombok.extern.log4j.Log4j;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+@Log4j
 public class DateTimeUtilities {
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -19,11 +22,12 @@ public class DateTimeUtilities {
         try {
             loadedDate = LocalDate.parse(input, FORMATTER);
 
+            // sprawdzamy czy załadowana data jest po wczoraj
             if (loadedDate.isAfter(LocalDate.now().minusDays(1))) {
                 throw new DateTimeParseException("End date should be no later than yesterday.", input, 1);
             }
         } catch (DateTimeParseException dtpe) {
-            System.out.println("Date parsing error.");
+            log.error("Date parse error.");
             throw new DateTimeParsingException(dtpe.getMessage());
         }
         return loadedDate;
@@ -39,10 +43,9 @@ public class DateTimeUtilities {
                 throw new DateTimeParseException("Start date should be no later than end date.", input, 1);
             }
         } catch (DateTimeParseException dtpe) {
-            System.out.println("Date parsing error.");
+            log.error("Date parse error.");
             throw new DateTimeParsingException(dtpe.getMessage());
         }
         return loadedDate;
     }
-
 }
