@@ -1,4 +1,4 @@
-package com.sda.javagdy4.apip_rekrutacyjne;
+package com.sda.javagdy4.api_rekrutacyjne;
 
 import java.util.Optional;
 
@@ -18,13 +18,16 @@ public enum NBPCurrency {
     }
 
     public static Optional<NBPCurrency> parse(String input) {
-        if(input.toUpperCase().contains("DOLLAR")) {
+        if (input.toUpperCase().contains("DOLAR")) {
             return Optional.of(NBPCurrency.UNITED_STATES_DOLLAR);
-        } else if (input.toUpperCase().contains("RUBLE")) {
+        } else if (input.toUpperCase().contains("RUBEL")) {
             return Optional.of(NBPCurrency.RUSSIAN_RUBLE);
         } else if (input.toUpperCase().contains("EURO")) {
             return Optional.of(NBPCurrency.EURO);
         }
         return Optional.empty();
     }
+    //    NBPCurrency currency = NBPCurrency.EURO;
+//        System.out.println(currency); // EURO
+//        System.out.println(currency.getShortName()); // EUR
 }
