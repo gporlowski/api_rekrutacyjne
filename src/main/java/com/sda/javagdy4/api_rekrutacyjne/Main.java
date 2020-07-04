@@ -11,11 +11,15 @@ public class Main {
 
         loadAndSetCurrency(scanner, parameters);
         loadAndSetEndDate(scanner, parameters);
+        loadAndSetStartDate(scanner, parameters);
+
+        NBPApi nbpApi = new NBPApi();
+        nbpApi.requestBidAskRates(parameters);
     }
 
     private static void loadAndSetEndDate(Scanner scanner, NBPApiParameters parameters) {
         do {
-            System.out.println("Please enter end date [yyyy-MM-dd]:");
+            System.out.print("Please enter end date [yyyy-MM-dd]: ");
             try {
                 parameters.setEndDate(scanner.nextLine());
             } catch (DateTimeParsingException e) {
@@ -26,7 +30,7 @@ public class Main {
 
     private static void loadAndSetStartDate(Scanner scanner, NBPApiParameters parameters) {
         do {
-            System.out.println("Please enter start date [yyyy-MM-dd]:");
+            System.out.print("Please enter start date [yyyy-MM-dd]: ");
             try {
                 parameters.setStartDate(scanner.nextLine());
             } catch (DateTimeParsingException e) {
@@ -37,7 +41,7 @@ public class Main {
 
     private static void loadAndSetCurrency(Scanner scanner, NBPApiParameters parameters) {
         do {
-            System.out.println("Please enter currency [dolar,euro,rubel]:");
+            System.out.print("Please enter currency [dolar,euro,rubel]: ");
             Optional<NBPCurrency> optionalCurrency = NBPCurrency.parse(scanner.nextLine());
             if (optionalCurrency.isPresent()) {
                 parameters.setCurrency(optionalCurrency.get());
